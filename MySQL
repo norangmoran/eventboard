@@ -1,0 +1,23 @@
+CREATE user ran@localhost identified by '1234';
+GRANT select, insert, update on eventboard.* to ran@localhost;
+
+ 
+ 
+CREATE database `eventboard` CHARACTER SET utf8 COLLATE utf8_general_ci;
+
+
+
+CREATE table board (
+    no tinyint unsigned not null auto_increment primary key,
+    writer VARCHAR(100),
+    pw VARCHAR(100),
+    title VARCHAR(100),
+    content TEXT,
+    time DATETIME,
+    cnt tinyint);
+
+
+
+alter table board add fill VARCHAR(10);
+
+
