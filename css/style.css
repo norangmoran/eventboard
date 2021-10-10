@@ -73,8 +73,19 @@ ul li{
 	margin-top: 70px;
 	font-size: 20px;
 }
+#in_title{
+	margin-top: 45px;
+}
+#in_title textarea{
+	font-weight: bold;
+	font-size: 25px;
+	color: #333;
+	width: 900px;
+	border: none;
+	resize: none;
+}
 #in_name{
-	margin-top: 30px;
+	margin-top: 20px;
 }
 #in_name textarea{
 	font-weight: bold;

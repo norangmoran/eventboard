@@ -1,5 +1,5 @@
 <?php
-include $_SERVER['DOCUMENT_ROOT']."/eventboard/db.php";
+include $_SERVER['DOCUMENT_ROOT']."/db.php";
 
 $username = $_POST['writer'];
 $userpw = password_hash(password_hash($_POST['pw'],PASSWORD_DEFAULT));
