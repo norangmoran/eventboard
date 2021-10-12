@@ -1,15 +1,15 @@
-<?php include $_SERVER['DOCUMENT_ROOT']."/db.php"; ?> 
+<?php include $_SERVER['DOCUMENT_ROOT']."/eventboard/db.php"; ?> 
     <!--DOCUMENT-ROOT는 현재 실행되고있는 위치를 말하며
     현재 실행중인 위치를 기준으로 /db.php 를 서버 기본경로로 지정-->
 <!DOCTYPE html>
     <head>
         <meta charset="UTF-8">
         <title>게시판 만들어보기</title>
-        <link rel="stylesheet" type="text/css" href="/css/style.css?ver=1"/>
+        <link rel="stylesheet" type="text/css" href="/eventboard/css/style.css?ver=1"/>
     </head>
     <body>
         <div id="BoardArea">
-            <h1><a href="/index.php">사건게시판</a></h1>
+            <h1><a href="/eventboard/index.php">사건게시판</a></h1>
             <h4>지금 당신에겐 무슨 일이 일어났나요?</h4>
             <table class="ListTable">
                 <thead>
@@ -41,7 +41,7 @@
                     <?php } ?>
             </table>
             <div id="writer_btn">
-                <a href="/page/board/write.php"><button>글쓰기</button></a>
+                <a href="/eventboard/page/board/write.php"><button>글쓰기</button></a>
             </div>
         </div>
     </body>
