@@ -4,13 +4,14 @@
 <!DOCTYPE html>
     <head>
         <meta charset="UTF-8">
-        <title>게시판 만들어보기</title>
+        <title>모란희 웹 포트폴리오</title>
         <link rel="stylesheet" type="text/css" href="/eventboard/css/style.css?ver=1"/>
     </head>
     <body>
         <div id="BoardArea">
             <h1><a href="/eventboard/index.php">사건게시판</a></h1>
-            <h4>지금 당신에겐 무슨 일이 일어났나요?</h4>
+            <h4>지금 당신에겐 무슨 일이 생겼나요?</h4>
+            <h5>자세한 개발 이력을 알고 싶으시다면 <a href="https://github.com/norangmoran/eventboard"target="_blank">깃허브저장소</a>를 방문해 주세요!</h5>
             <table class="ListTable">
                 <thead>
                     <tr>
