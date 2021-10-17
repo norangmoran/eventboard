@@ -12,7 +12,7 @@ if($username && $userpw && $title && $content) {
     $sql = SQLsyn("insert into board(writer,pw,title,content,time) 
         values('".$username."','".$userpw."','".$title."','".$content."','".$date."')");
     echo "<script> alert('게시물이 등록되었습니다.');
-        location.href='/';</script>";
+        location.href='/eventboard/index.php';</script>";
 } else {
     echo "<script> alert('빈 항목을 채워주세요.');
         history.back();</script>";
