@@ -8,9 +8,10 @@ $userpw = password_hash($_POST['pw'],PASSWORD_DEFAULT);
 $title = $_POST['title'];
 $content = $_POST['content'];
 $time = date('Y-m-d H:i:s'); //date함수가 자동으로 날짜 생성
+$cnt = 0;
 if($username && $userpw && $title && $content) {
-    $sql = SQLsyn("insert into board(writer,pw,title,content,time) 
-        values('".$username."','".$userpw."','".$title."','".$content."','".$date."')");
+    $sql = SQLsyn("insert into board(`writer`,`pw`,`title`,`content`,`time`,`cnt`) 
+        values('".$username."','".$userpw."','".$title."','".$content."','".$time."','".$cnt."');");
     echo "<script> alert('게시물이 등록되었습니다.');
         location.href='/eventboard/index.php';</script>";
 } else {
