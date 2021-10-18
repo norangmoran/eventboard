@@ -73,11 +73,13 @@ ul li{
 }
 /* 게시판 글쓰기 */
 #board_write {
-	width: 90%;
+	width: 900px;
 	position: relative;
 	margin: 0 auto;
 }
 #write_area{
+	width: 900px;
+	position: relative;
 	margin-top: 70px;
 	font-size: 20px;
 }

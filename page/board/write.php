@@ -17,7 +17,18 @@
                     <div class="wi_line"></div>
 
                     <div id="in_name">
-                        <textarea name="writer" id="uname" rows="1" cols="55" placeholder="글쓴이" maxlength="100" required></textarea>
+                        <textarea name="writer" id="uname" rows="1" cols="25" placeholder="글쓴이" maxlength="50" required></textarea>
+                    </div>
+
+                    <div id="filling">
+                        <select name="fill">
+                            <option value="보통" selected="selected">보통</option>
+                            <option value="기쁨">기쁨</option>
+                            <option value="슬픔">슬픔</option>
+                            <option value="화남">화남</option>
+                            <option value="놀람">놀람</option>
+                            <option value="혼란">혼란</option>
+                        </select>
                     </div>
 
                     <div class="wi_line"></div>
