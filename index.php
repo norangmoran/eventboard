@@ -5,9 +5,23 @@
     <head>
         <meta charset="UTF-8">
         <title>모란희 웹 포트폴리오</title>
-        <link rel="stylesheet" type="text/css" href="/eventboard/css/style.css?ver=1"/>
+        <link rel="stylesheet" type="text/css" href="/eventboard/css/style.css"/>
     </head>
     <body>
+    <aside>
+            <a href="https://url.kr/psb46e"target="_blank" id="stdlink">
+                <button>
+                    차세대 사물인터넷(Iot)<br>개발자 양성반에서<br>무엇을 학습했는지<br>궁금하신가요?<br>
+                    <img src="/eventboard/img/Iot수업내용.png" Width="150">
+                </button>
+            </a>
+            <a href="https://url.kr/ryd9el"target="_blank" id="passlink">
+                <button>
+                    이전 기계공학 분야에서<br>경력이 궁금하신가요?<br>
+                    <img src="/eventboard/img/기계공학 이력서.png" Width="150">
+                </button>
+            </a>
+        </aside>
         <div id="BoardArea">
             <h1><a href="/eventboard/index.php">사건게시판</a></h1>
             <h4>지금 당신에겐 무슨 일이 생겼나요?</h4>

@@ -71,6 +71,27 @@ ul li{
 	position: right;
 	margin-top:30px;
 }
+
+aside{
+	list-style-type: none;
+	width: 170px;
+	height: 100%;
+	position: fixed;
+	overflow: auto;
+}
+#stdlink{
+	padding: 1.5px 1px 1px 1px;
+	width: 150px;
+	height: 300px;
+	border-right: 1.5px solid darkgray;
+}
+#passlink{
+	padding: 1.5px 1px 1px 1px;
+	width: 150px;
+	height: 300px;
+	border-right: 1.5px solid darkgray;
+}
+
 /* 게시판 글쓰기 */
 #board_write {
 	width: 900px;
