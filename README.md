@@ -16,4 +16,6 @@
 |21.10.07|style.css / writeON.php / write.php 작성 완료|
 |21.10.08|password_hash 테스트|보류|
 |21.10.11|웹 호스팅 완료|
-|21.10.11|:heavy_exclamation_mark: 글쓰기 등록 오류 발생|작업중|
+|21.10.11|:heavy_exclamation_mark: 글쓰기 등록 오류 발생|19일 완료|
+|21.10.19|기분(fill) 항목 추가|
+|21.10.21|aside 추가(자기 소개 항목,QRCODE)|
