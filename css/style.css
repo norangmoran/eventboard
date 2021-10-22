@@ -65,7 +65,7 @@ ul li{
 	text-align:center;
 	padding:10px 0;
 	border-bottom:1px solid #CCC; height:20px;
-	font-size: 14px 
+	font-size: 14px
 }
 #write_btn {
 	position: right;
@@ -152,4 +152,37 @@ aside{
 	width: 100px;
 	height: 30px;
 	margin-bottom: 30px;
+}
+
+/* 게시판 read */
+#board_read {
+	width:900px;
+	position: relative;
+	word-break:break-all;
+}
+#user_info {
+	font-size:14px;
+}
+#user_info ul li {
+	float:left;
+	margin-left:10px;
+}
+#bo_line {
+	width:880px;
+	height:2px;
+	background: gray;
+	margin-top:20px;
+}
+#bo_content {
+	margin-top:20px;
+}
+#bo_ser {
+	font-size:14px;
+	color:#333;
+	position: absolute;
+	right: 0;
+}
+#bo_ser > ul > li {
+	float:left;
+	margin-left:10px;
 }
