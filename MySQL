@@ -21,3 +21,4 @@ CREATE table board (
 alter table board add fill VARCHAR(10);
 
 
+GRANT delete on eventboard.* to ran@localhost;
