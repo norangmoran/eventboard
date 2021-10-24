@@ -19,7 +19,7 @@
     <div id="board_read">
         <h2><?php echo $board['title']; ?></h2>
         <div id="user_info">
-            <?php echo $board['writer']; ?>  |  <?php echo $board['time']; ?>  |  조회수: <?php echo $board['cnt']; ?>
+            <?php echo $board['writer']; ?>  |  <?php echo $board['time']; ?>  |  <?php echo $board['fill']; ?>  |  조회수: <?php echo $board['cnt']; ?>
             <div id="bo_line"></div>
         </div>
         <div id="bo_content">
