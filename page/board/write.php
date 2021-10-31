@@ -6,12 +6,24 @@
 </head>
 <body>
     <div id="board_write">
-        <h1><a href="/eventboard/index.php">사건게시판</a></h1>
+        <a href="/eventboard/index.php"><h1>사건게시판</h1></a>
         <h4>글을 작성하는 공간입니다.</h4>
             <div id="write_area">
                 <form action="/eventboard/writeON.php" method="post">
-                    <div id="in_title">
-                        <textarea name="title" id="utitle" rows="1" cols="55" placeholder="제목" maxlength="100" required></textarea>
+                    <div id="AR_top">
+                        <div id="in_title">
+                            <textarea name="title" id="utitle" rows="1" cols="55" placeholder="제목" maxlength="100" required></textarea>
+                        </div>
+                        <div id="filling">
+                            <select name="fill">
+                                <option value="보통" selected="selected">보통</option>
+                                <option value="기쁨">기쁨</option>
+                                <option value="슬픔">슬픔</option>
+                                <option value="화남">화남</option>
+                                <option value="놀람">놀람</option>
+                                <option value="혼란">혼란</option>
+                            </select>
+                        </div>
                     </div>
 
                     <div class="wi_line"></div>
@@ -20,32 +32,33 @@
                         <textarea name="writer" id="uname" rows="1" cols="25" placeholder="글쓴이" maxlength="50" required></textarea>
                     </div>
 
-                    <div id="filling">
-                        <select name="fill">
-                            <option value="보통" selected="selected">보통</option>
-                            <option value="기쁨">기쁨</option>
-                            <option value="슬픔">슬픔</option>
-                            <option value="화남">화남</option>
-                            <option value="놀람">놀람</option>
-                            <option value="혼란">혼란</option>
-                        </select>
-                    </div>
-
-                    <div class="wi_line"></div>
-
                     <div id="in_content">
                         <textarea name="content" id="ucontent" placeholder="내용" required></textarea>
                     </div>
 
                     <div id="in_pw">
-                        <input type="password" name="pw" id="upw"  placeholder="비밀번호" required />  
+                        <input type="password" name="pw" id="upw"  placeholder=" 비밀번호" required />  
                     </div>
                     
-                    <div class="bt_se">
+                    <div id="bt_se">
                         <button type="submit">글 작성</button>
                     </div>
                 </form>
             </div>
         </div>
+        <footer>
+            <a href="https://url.kr/psb46e"target="_blank">
+                <button>
+                    차세대 사물인터넷(Iot)<br>개발자 양성반에서<br>무엇을 학습했는지<br>궁금하신가요?<br>
+                    <img src="/eventboard/img/Iot수업내용.png" Width="100">
+                </button>
+            </a>
+            <a href="https://url.kr/ryd9el"target="_blank">
+                <button>
+                    과거 기계공학 분야의<br>경력이 궁금하신가요?<br>
+                    <img src="/eventboard/img/기계공학 이력서.png" Width="100">
+                </button>
+            </a>
+        </footer>
     </body>
 </html>

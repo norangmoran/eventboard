@@ -1,0 +1,188 @@
+@charset "utf-8";
+
+*{
+    margin: 0 auto;
+    padding: 0;
+    font-family: 'Malgun gothic','Sans-Serif','Arial';
+}
+h1{
+	color: white;
+	text-align: center;
+
+	border: 2px solid grey;
+	border-radius: 20px;
+	background-color: darkgray;
+
+	width: 70%;
+	margin-top: 15px;
+}
+h1:hover{
+	color: black;
+	background-color: white;
+}
+h4{
+	text-align: center;
+	line-height: 40px;
+}
+h5{
+	color: #333;
+	text-align: center;
+	line-height: 50px;
+}
+h5 a{
+	color: steelblue;
+}
+a{
+    text-decoration: none;
+    color: #333;
+}
+ul li{
+    list-style: none;
+}
+.fl{
+    float: left;
+}
+.tc{
+    text-align: center;
+}
+
+
+#BoardArea {
+	width: 900px;
+	position: relative;
+}
+.ListTable {
+	margin-top: 40px;
+}
+.ListTable thead th{
+	height:40px;
+	background-color: lavender;
+	border-bottom:2.5px solid lightslategrey;
+	font-weight: bold;
+	font-size: 17px;
+}
+.ListTable tbody td{
+	text-align:center;
+	padding:10px 0;
+	border-bottom:1px solid #CCC; height:20px;
+	font-size: 14px
+}
+#write_btn {
+	position: right;
+	margin-top:30px;
+}
+
+aside{
+	list-style-type: none;
+	width: 170px;
+	height: 100%;
+	position: fixed;
+	overflow: auto;
+}
+#stdlink{
+	padding: 1.5px 1px 1px 1px;
+	width: 150px;
+	height: 300px;
+	border-right: 1.5px solid darkgray;
+}
+#passlink{
+	padding: 1.5px 1px 1px 1px;
+	width: 150px;
+	height: 300px;
+	border-right: 1.5px solid darkgray;
+}
+
+/* 게시판 글쓰기 */
+#board_write {
+	width: 900px;
+	position: relative;
+	margin: 0 auto;
+}
+#write_area{
+	width: 900px;
+	position: relative;
+	margin-top: 70px;
+	font-size: 20px;
+}
+#in_title{
+	margin-top: 45px;
+}
+#in_title textarea{
+	font-weight: bold;
+	font-size: 25px;
+	color: #333;
+	width: 900px;
+	border: none;
+	resize: none;
+}
+#in_name{
+	margin-top: 20px;
+}
+#in_name textarea{
+	font-weight: bold;
+	font-size: 15px;
+	color: #333;
+	width: 900px;
+	border: none;
+	resize: none;
+}
+.wi_line{
+	border: solid 1px lightgray;
+	margin-top: 10px;
+}
+#in_content{
+	margin-top: 10px;
+}
+#in_content textarea{
+	font: 14px;
+	color: #333;
+	width: 900px;
+	height: 400px;
+	resize: none;
+}
+#in_pw input{
+	font: 14px;
+	margin-top: 10px;
+}
+.bt_se{
+	margin-top: 20px;
+	text-align: center;
+}
+.bt_se button{
+	width: 100px;
+	height: 30px;
+	margin-bottom: 30px;
+}
+
+/* 게시판 read */
+#board_read {
+	width:900px;
+	position: relative;
+	word-break:break-all;
+}
+#user_info {
+	font-size:14px;
+}
+#user_info ul li {
+	float:left;
+	margin-left:10px;
+}
+#bo_line {
+	width:880px;
+	height:2px;
+	background: gray;
+	margin-top:20px;
+}
+#bo_content {
+	margin-top:20px;
+}
+#bo_ser {
+	font-size:14px;
+	color:#333;
+	position: absolute;
+	right: 0;
+}
+#bo_ser > ul > li {
+	float:left;
+	margin-left:10px;
+}
