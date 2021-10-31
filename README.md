@@ -20,7 +20,7 @@
 <br>
 
 >**와이어 프레임** <br>
-><img src="/와이어프레임2.jpg" width="700px">
+><img src="/img/와이어프레임2.jpg" width="700px">
 
 
 
