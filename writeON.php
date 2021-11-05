@@ -3,8 +3,6 @@ include $_SERVER['DOCUMENT_ROOT']."/eventboard/db.php";
 
 $username = $_POST['writer'];
 $userpw = password_hash($_POST['pw'],PASSWORD_DEFAULT);
-//비밀번호 암호화. PHP5버전 이상부터 내장되어있고 이하 버전엔 password.php파일을 insclude해서 씀.
-//password_hash가 있고 password_default가 있음
 $title = $_POST['title'];
 $content = $_POST['content'];
 $fill = $_POST['fill'];

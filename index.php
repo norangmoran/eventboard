@@ -1,6 +1,6 @@
 <?php include $_SERVER['DOCUMENT_ROOT']."/eventboard/db.php"; ?> 
-    <!--DOCUMENT-ROOT는 현재 실행되고있는 위치를 말하며
-    현재 실행중인 위치를 기준으로 /db.php 를 서버 기본경로로 지정-->
+    <!--DOCUMENT-ROOT는 현재 실행되고있는 index.php 위치를 말하며
+    여기를 기준으로 /eventboard/db.php 를 서버함수로써 불러옴-->
 <!DOCTYPE html>
     <head>
         <meta charset="UTF-8">
@@ -23,11 +23,11 @@
                     </tr>
                 </thead>
                 <?php
-                //board테이블에서 idx기준으로 내림차순 5개까지 표시
                 $sql = SQLsyn("select * from board order by no desc limit 5;");
+                //  쿼리 -> board 테이블에서 내림차순으로 5개 레코드를 전부 표시하라
                     while($board = $sql->fetch_array()) {
                         $title = $board["title"];
-                        if(strlen($title)>30) {
+                        if(strlen($title)>30) { //제목이 30자 이상아면 ...으로 간소화해주는 작업 실행
                             $title = str_replace($board["title"],mb_substr($board["title"],0,30,"utf-8")."...",$board["title"]);
                         } ?>
                         <tbody>
