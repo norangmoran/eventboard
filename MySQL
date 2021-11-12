@@ -1,5 +1,5 @@
 CREATE user ran@localhost identified by '1234';
-GRANT select, insert, update on eventboard.* to ran@localhost;
+GRANT select, insert, update, delete on eventboard.* to ran@localhost;
 
  
  
@@ -15,9 +15,6 @@ CREATE table board (
     content TEXT,
     time DATETIME,
     cnt tinyint);
-
-
-
 alter table board add fill VARCHAR(10);
 
 
