@@ -39,6 +39,11 @@
                     <div id="in_pw">
                         <input type="password" name="pw" id="upw"  placeholder=" 비밀번호" required />  
                     </div>
+
+                    <div id="Locker">
+                        <input type="radio" value="0" name="postlock" checked>공개 &nbsp;
+                        <input type="radio" value="1" name="postlock">비공개
+                    </div>
                     
                     <div id="bt_se">
                         <button type="submit">글 작성</button>

@@ -15,7 +15,8 @@ CREATE table board (
     content TEXT,
     time DATETIME,
     cnt tinyint);
-alter table board add fill VARCHAR(10);
+alter table board add `fill` VARCHAR(10);
+alter table board add `lock` tinyint;
 
 
 GRANT delete on eventboard.* to ran@localhost;

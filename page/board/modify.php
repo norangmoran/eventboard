@@ -47,6 +47,11 @@
                     <input type="password" name="pw" id="upw" placeholder="비밀번호" required>
                 </div>
 
+                <div id="Locker">
+                        <input type="radio" value="0" name="postlock" <?php if($board['lock']!="1") {echo "checked";} ?>>공개 &nbsp;
+                        <input type="radio" value="1" name="postlock" <?php if($board['lock']=="1") {echo "checked";} ?>>비공개
+                </div>
+
                 <div id="bt_se">
                     <button type="submit">글 작성</button>
                 </div>

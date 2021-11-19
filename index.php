@@ -12,6 +12,7 @@
             <a href="/eventboard/index.php"><h1>사건게시판</h1></a>
             <h4>당신에겐 지금 무슨 일이 생겼나요?</h4>
             <h5>더 자세한 개발 이력을 알고 싶으시다면 <a href="https://github.com/norangmoran/eventboard"target="_blank">깃허브저장소</a>를 방문해 주세요!</h5>
+            <h6><a href='https://kor.pngtree.com/so/%ec%9e%a0%ea%b8%88'>잠금 이미지 출처는 .pngtree.com/입니다.</a></h6>
             <table class="ListTable">
                 <thead>
                     <tr>
@@ -33,7 +34,14 @@
                         <tbody>
                             <tr>
                                 <td width="70"><?php echo $board['no']; ?></td>
-                                <td width="500"><a href="/eventboard/page/board/read.php?no=<?php echo $board["no"];?>"><?php echo $title; ?></a></td>
+                                <td width="500">
+                                    <?php $lockimg="<img src='/eventboard/img/lock.png' alt='비공개' width='20' height='17'>";
+                                    if($board['lock']==1){ ?>
+                                        <a href="/evenetboard/page/board/locker.php?no=<?php echo $board["no"];?>"><?php echo $title,"&nbsp;&nbsp;", $lockimg; ?></a>
+                                    <?php } else { ?>
+                                    <a href="/eventboard/page/board/read.php?no=<?php echo $board["no"];?>"><?php echo $title; ?></a>
+                                    <?php } ?>
+                                </td>
                                 <td width="120"><?php echo $board['fill']; ?></td>
                                 <td width="100"><?php echo $board['time']; ?></td>
                                 <td width="100"><?php echo $board['cnt']; ?></td>

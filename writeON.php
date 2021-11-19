@@ -8,9 +8,11 @@ $content = $_POST['content'];
 $fill = $_POST['fill'];
 $time = date('Y-m-d H:i:s'); //date함수가 자동으로 날짜 생성
 $cnt = 0;
+$lock = $_POST['postlock'];
+
 if($username && $userpw && $title && $content) {
-    $sql = SQLsyn("insert into board(`writer`,`pw`,`title`,`content`,`time`,`cnt`,`fill`) 
-        values('".$username."','".$userpw."','".$title."','".$content."','".$time."','".$cnt."','".$fill."');");
+    $sql = SQLsyn("insert into board(`writer`,`pw`,`title`,`content`,`time`,`cnt`,`fill`,`lock`) 
+        values('".$username."','".$userpw."','".$title."','".$content."','".$time."','".$cnt."','".$fill."','".$lock."');");
     echo "<script> alert('게시물이 등록되었습니다.');
         location.href='/eventboard/index.php';</script>";
 } else {
