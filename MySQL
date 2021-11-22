@@ -16,7 +16,7 @@ CREATE table board (
     time DATETIME,
     cnt tinyint);
 alter table board add `fill` VARCHAR(10);
-alter table board add `lock` tinyint;
+alter table board add `lock` tinyint unsigned not null default '0';
 
 
 GRANT delete on eventboard.* to ran@localhost;

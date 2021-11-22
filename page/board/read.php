@@ -11,7 +11,7 @@
     $num = $_GET['no'];
     $hit = mysqli_fetch_array(SQLsyn("select * from board where no = '".$num."'"));
     $hit = $hit['cnt'] + 1;
-    $fet = SQLsyn("update board set cnt = '".$hit."' where no = '".$num."'");
+    $fet = SQLsyn("update board set `cnt` = '".$hit."' where no = '".$num."'");
     $sql = SQLsyn("select * from board where no = '".$num."'");
     $board = $sql->fetch_array();
     ?>
@@ -21,6 +21,22 @@
         <h4>글을 읽는 공간입니다.</h4>
         <div id="read_area">
             <div id="AR_top">
+                <h2 id="lockpage_icon">
+                    <?php $lockimg="<img src='/eventboard/img/lock.png' alt='비공개' width='30' height='30'>";
+                    if($board['lock']==1){
+                        echo $lockimg;
+                        if(isset($_POST['pw_chk'])) {
+                            if(password_verify($_POST['pw_chk'],$board['pw'])) {
+                                echo "";
+                            } else { ?>
+                                <script type="text/javascript">alert('비밀번호가 틀립니다.');</script>
+                                <script type="text/javascript">location.replace("locker.php?no=<?php echo $board["no"]; ?>");</script>
+                            <?php }
+                        } else { ?> <!-- 주소창에 직접 no를 써서 부정접속할 경우를 대비해 입력한pw가 없으면 비밀번호 입력으로 돌아감 -->
+                            <script type="text/javascript">alert('부정접속입니다.');</script>
+                            <script type="text/javascript">location.replace("locker.php?no=<?php echo $board["no"]; ?>");</script>
+                        <?php }
+                    } else {echo "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;";} ?>
                 <h2 id="title_coll"><?php echo $board['title']; ?></h2>
                 <h2 id="fill_coll"><?php echo $board['fill']; ?></h2>
             </div>
@@ -43,19 +59,6 @@
             </div>
         </div>
     </div>
-    <footer>
-            <a href="https://url.kr/psb46e"target="_blank">
-                <button>
-                    차세대 사물인터넷(Iot)<br>개발자 양성반에서<br>무엇을 학습했는지<br>궁금하신가요?<br>
-                    <img src="/eventboard/img/Iot수업내용.png" Width="100">
-                </button>
-            </a>
-            <a href="https://url.kr/ryd9el"target="_blank">
-                <button>
-                    과거 기계공학 분야의<br>경력이 궁금하신가요?<br>
-                    <img src="/eventboard/img/기계공학 이력서.png" Width="100">
-                </button>
-            </a>
-    </footer>
+    <?php include "footer.php"; ?>
 </body>
 </html>

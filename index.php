@@ -37,7 +37,7 @@
                                 <td width="500">
                                     <?php $lockimg="<img src='/eventboard/img/lock.png' alt='비공개' width='20' height='17'>";
                                     if($board['lock']==1){ ?>
-                                        <a href="/evenetboard/page/board/locker.php?no=<?php echo $board["no"];?>"><?php echo $title,"&nbsp;&nbsp;", $lockimg; ?></a>
+                                        <a href="/eventboard/page/board/locker.php?no=<?php echo $board["no"];?>"><?php echo $title,"&nbsp;&nbsp;", $lockimg; ?></a>
                                     <?php } else { ?>
                                     <a href="/eventboard/page/board/read.php?no=<?php echo $board["no"];?>"><?php echo $title; ?></a>
                                     <?php } ?>
@@ -53,19 +53,6 @@
                 <a href="/eventboard/page/board/write.php"><button>글쓰기</button></a>
             </div>
         </div>
-        <footer>
-            <a href="https://url.kr/psb46e"target="_blank">
-                <button>
-                    차세대 사물인터넷(Iot)<br>개발자 양성반에서<br>무엇을 학습했는지<br>궁금하신가요?<br>
-                    <img src="/eventboard/img/Iot수업내용.png" Width="100">
-                </button>
-            </a>
-            <a href="https://url.kr/ryd9el"target="_blank">
-                <button>
-                    과거 기계공학 분야의<br>경력이 궁금하신가요?<br>
-                    <img src="/eventboard/img/기계공학 이력서.png" Width="100">
-                </button>
-            </a>
-        </footer>
+        <?php include "footer.php"; ?>
     </body>
 </html>

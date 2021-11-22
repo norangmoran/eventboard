@@ -1,13 +1,14 @@
 <?php
 include $_SERVER['DOCUMENT_ROOT']."/eventboard/db.php";
 
+$time = date('Y-m-d H:i:s'); //date함수가 자동으로 날짜 생성
+$cnt = 0;
+
 $username = $_POST['writer'];
 $userpw = password_hash($_POST['pw'],PASSWORD_DEFAULT);
 $title = $_POST['title'];
 $content = $_POST['content'];
 $fill = $_POST['fill'];
-$time = date('Y-m-d H:i:s'); //date함수가 자동으로 날짜 생성
-$cnt = 0;
 $lock = $_POST['postlock'];
 
 if($username && $userpw && $title && $content) {
