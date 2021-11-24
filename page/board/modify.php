@@ -16,6 +16,18 @@
         <h1><a href="/eventboard/index.php">사건게시판</a></h1>
         <h4>글을 수정하는 공간입니다.</h4>
         <div id="write_area">
+            <?php if(isset($_POST['pw_chk'])){
+                if(password_verify($_POST['pw_chk'],$board['pw'])) {
+                    echo "";
+                } else { ?>
+                    <script type="text/javascript">alert('비밀번호가 틀립니다.');</script>
+                    <script type="text/javascript">location.replace("modify_lock.php?no=<?php echo $board["no"]; ?>");</script>
+                <?php }
+            } else { ?>
+                <script type="text/javascript">alert('부정접속입니다.');</script>
+                <script type="text/javascript">location.replace("modify_lock.php?no=<?php echo $board["no"]; ?>");</script>
+            <?php } ?>
+
             <form action="/eventboard/modifyON.php?no=<?php echo $num; ?>" method="post">
                 <div id="AR_top">    
                     <div id="in_title">
