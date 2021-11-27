@@ -12,5 +12,11 @@
 
     $sql = SQLsyn("update board set `writer`='".$username."', `pw`='".$userpw."', `title`='".$title."', `content`='".$content."', `fill`='".$fill."', `lock`='".$lock."' where no='".$num."'"); ?>
     <!-- lock 컬럼의 경우 커멘트와 햇갈리는지 구문오류가 뜸. ``를 씌워주니까 문제 사라짐 -->
-    <script type="text/javascript">alert("수정되었습니다."); </script>
-    <meta http-equiv="refresh" content="0 url=/eventboard/page/board/read.php?no=<?php echo $num; ?>">
+
+<script type="text/javascript">alert("수정되었습니다.");
+    <?php if($lock == 1){ ?>
+        location.replace("/eventboard/page/board/locker.php?no=<?php echo $num; ?>");
+    <?php } else { ?>
+        location.replace("/eventboard/page/board/read.php?no=<?php echo $num; ?>");
+    <?php } ?>
+</script>
