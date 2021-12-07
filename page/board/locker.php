@@ -9,6 +9,7 @@
       modal:true,
       title:'비밀글입니다.',
       width:400,
+      close:function(event,ui){history.back();}
     });
   });
 </script>

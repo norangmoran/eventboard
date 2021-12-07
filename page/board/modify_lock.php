@@ -9,6 +9,7 @@
       modal:true,
       title:'비밀번호를 입력하세요.',
       width:400,
+      close:function(event,ui){history.back();}
     });
   });
 </script>
