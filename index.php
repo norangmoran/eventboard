@@ -24,51 +24,84 @@
                     </tr>
                 </thead>
                 <?php
-                if(isset($_GET['page'])){
-                    $page = $_GET['page'];
-                } else {
-                    $page = 1;
-                }
+                if(isset($_GET['page'])) {$page = $_GET['page'];
+                } else {$page = 1;}
 
                 $sql = SQLsyn("select * from board");
-                $row_num = mysqli_num_rows($sql);
-                $list = 5;
-                $block_ct = 5;
+                $row_num = mysqli_num_rows($sql); //총 레코드 수
+                $list = 5; //한 페이지에 보여줄 개수
+                $block_ct = 5; //블록당 보여줄 페이지 개수
 
-                $block_num = ceil($page/$block_ct);
-                $block_start = (($block_num - 1) * $block_ct) + 1;
-                $block_end = $block_start + $block_ct - 1;
+                $block_num = ceil($page/$block_ct); //현 페이지 블록
+                $block_start = (($block_num - 1) * $block_ct) + 1; //블록 시작
+                $block_end = $block_start + $block_ct - 1; //블록 끝
 
-                $total_page = ceil($row_num / $list);
-                if($block_end > $total_page) $block_end = $total_page;
-                $total_block = ceil($total_page / $block_ct);
-                $start_num = ($page - 1) * $list;
+                $total_page = ceil($row_num / $list); //페이징한 페이지 수
+                if($block_end > $total_page) $block_end = $total_page; //이후 몇 페이지까지 있는지 보여줌
+                $total_block = ceil($total_page / $block_ct); //블럭 총 개수
+                $start_num = ($page - 1) * $list; //불러올 레코드의 limit 제한 시작점
 
                 $sql2 = SQLsyn("select * from board order by no desc limit $start_num, $list");
                 
-                    while($board = $sql2->fetch_array()) {
-                        $title = $board["title"];
-                        if(strlen($title)>30) { //제목이 30자 이상아면 ...으로 간소화해주는 작업 실행
-                            $title = str_replace($board["title"],mb_substr($board["title"],0,30,"utf-8")."...",$board["title"]);
-                        } ?>
-                        <tbody>
-                            <tr>
-                                <td width="70"><?php echo $board['no']; ?></td>
-                                <td width="500">
-                                    <?php $lockimg="<img src='/eventboard/img/lock.png' alt='비공개' width='20' height='17'>";
-                                    if($board['lock']==1){ ?>
-                                        <a href="/eventboard/page/board/locker.php?no=<?php echo $board["no"];?>"><?php echo $title,"&nbsp;&nbsp;", $lockimg; ?></a>
-                                    <?php } else { ?>
-                                    <a href="/eventboard/page/board/read.php?no=<?php echo $board["no"];?>"><?php echo $title; ?></a>
-                                    <?php } ?>
-                                </td>
-                                <td width="120"><?php echo $board['fill']; ?></td>
-                                <td width="100"><?php echo $board['time']; ?></td>
-                                <td width="100"><?php echo $board['cnt']; ?></td>
-                            </tr>
-                        </tbody>
-                    <?php } ?>
+                while($board = $sql2->fetch_array()) {
+                    $title = $board["title"];
+                    if(strlen($title)>30) { //제목이 30자 이상아면 ...으로 간소화해주는 작업 실행
+                        $title = str_replace($board["title"],mb_substr($board["title"],0,30,"utf-8")."...",$board["title"]);} ?>
+
+                    <tbody>
+                        <tr>
+                            <td width="70"><?php echo $board['no']; ?></td>
+                            <td width="500">
+                                <?php $lockimg="<img src='/eventboard/img/lock.png' alt='비공개' width='20' height='17'>";
+                                if($board['lock'] == 1) { ?>
+                                    <a href="/eventboard/page/board/locker.php?no=<?php echo $board["no"];?>"><?php echo $title,"&nbsp;&nbsp;", $lockimg; ?></a>
+                                <?php } else { ?>
+                                <a href="/eventboard/page/board/read.php?no=<?php echo $board["no"];?>"><?php echo $title; } ?></a>
+                            </td>
+                            <td width="120"><?php echo $board['fill']; ?></td>
+                            <td width="100"><?php echo $board['time']; ?></td>
+                            <td width="100"><?php echo $board['cnt']; ?></td>
+                        </tr>
+                    </tbody>
+                <?php } ?>
             </table>
+            
+            <div id="page_num"> <!-- 페이징 -->
+                <ul>
+                    <?php
+                    if($page <= 1) { //처음으로 표시
+                        echo "<li class='FGboldRED'>처음</li>";
+                    } else { //아니면 1번 페이지로 가도록 링크
+                        echo "<li><a href='?page=1'>처음</a></li>";
+                    }
+
+                    if($page <= 1) { //이전 페이지로
+                    } else {
+                        $pre = $page - 1; //이전페이지 번호
+                        echo "<li><a href='?page=$pre'>이전</a></li>";
+                    }
+
+                    for($i = $block_start; $i <= $block_end; $i++) { //for문으로 페이지 뱉기
+                        if($page == $i) { //현제 페이지에 해당하는 숫자를 빨간색
+                            echo "<li class='FGboldRED'>[$i]</li>";
+                        } else { //그 외 페이지들 링크걸어 표시
+                            echo "<li><a href='?page=$i'>[$i]</a></li>";
+                        }
+                    }
+
+                    if($block_num >= $total_block) { //다음 페이지로
+                    } else {
+                        $next = $page + 1; //다음 페이지 번호
+                        echo "<li><a href='?page=$next'>다음</a></li>";
+                    }
+
+                    if($page >= $total_page) { //마지막으로 표시
+                        echo "<li class='FGboldRED'>마지막</li>";
+                    } else {
+                        echo "<li><a href='?page=$total_page'>마지막</a></li>";
+                    } ?>
+                </ul>
+            </div>
             <div id="writer_btn">
                 <a href="/eventboard/page/board/write.php"><button>글쓰기</button></a>
             </div>

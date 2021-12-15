@@ -269,3 +269,19 @@ h2{
 #bo_content{
 	margin: 0px 7px 0px 7px;
 }
+
+/* 페이징 CSS */
+#page_num {
+	font-size: 14px;
+	margin-left: 260px;
+	margin-top:30px; 
+}
+#page_num ul li {
+	float: left;
+	margin-left: 10px; 
+	text-align: center;
+}
+.FGboldRED {
+	font-weight: bold;
+	color:red;
+}
