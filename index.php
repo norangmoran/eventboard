@@ -67,40 +67,38 @@
             </table>
             
             <div id="page_num"> <!-- 페이징 -->
-                <ul>
-                    <?php
-                    if($page <= 1) { //처음으로 표시
-                        echo "<li class='FGboldRED'>처음</li>";
-                    } else { //아니면 1번 페이지로 가도록 링크
-                        echo "<li><a href='?page=1'>처음</a></li>";
-                    }
+                <?php
+                if($page <= 1) { //처음으로 표시
+                    echo "<div class='FGboldRED'>처음</div>";
+                } else { //아니면 1번 페이지로 가도록 링크
+                    echo "<div><a href='?page=1'>처음</a></div>";
+                }
 
-                    if($page <= 1) { //이전 페이지로
-                    } else {
-                        $pre = $page - 1; //이전페이지 번호
-                        echo "<li><a href='?page=$pre'>이전</a></li>";
-                    }
+                // if($page <= 1) { //이전 페이지로
+                // } else {
+                //     $pre = $page - 1; //이전페이지 번호
+                //     echo "<div><a href='?page=$pre'>이전</a></div>";
+                // }
 
-                    for($i = $block_start; $i <= $block_end; $i++) { //for문으로 페이지 뱉기
-                        if($page == $i) { //현제 페이지에 해당하는 숫자를 빨간색
-                            echo "<li class='FGboldRED'>[$i]</li>";
-                        } else { //그 외 페이지들 링크걸어 표시
-                            echo "<li><a href='?page=$i'>[$i]</a></li>";
-                        }
+                for($i = $block_start; $i <= $block_end; $i++) { //for문으로 페이지 뱉기
+                    if($page == $i) { //현제 페이지에 해당하는 숫자를 빨간색
+                        echo "<div class='FGboldRED'>[$i]</div>";
+                    } else { //그 외 페이지들 링크걸어 표시
+                        echo "<div><a href='?page=$i'>[$i]</a></div>";
                     }
+                }
 
-                    if($block_num >= $total_block) { //다음 페이지로
-                    } else {
-                        $next = $page + 1; //다음 페이지 번호
-                        echo "<li><a href='?page=$next'>다음</a></li>";
-                    }
+                if($block_num >= $total_block) { //다음 페이지로
+                } else {
+                    $next = $page + 1; //다음 페이지 번호
+                    echo "<div><a href='?page=$next'>다음</a></div>";
+                }
 
-                    if($page >= $total_page) { //마지막으로 표시
-                        echo "<li class='FGboldRED'>마지막</li>";
-                    } else {
-                        echo "<li><a href='?page=$total_page'>마지막</a></li>";
-                    } ?>
-                </ul>
+                if($page >= $total_page) { //마지막으로 표시
+                    echo "<div class='FGboldRED'>마지막</div>";
+                } else {
+                    echo "<div><a href='?page=$total_page'>마지막</a></div>";
+                } ?>
             </div>
             <div id="writer_btn">
                 <a href="/eventboard/page/board/write.php"><button>글쓰기</button></a>

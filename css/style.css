@@ -273,13 +273,14 @@ h2{
 /* 페이징 CSS */
 #page_num {
 	font-size: 14px;
-	margin-left: 260px;
-	margin-top:30px; 
+	margin-top:30px;
+	display: flex;
+	justify-content: space-between;
+	width: 250px;
 }
-#page_num ul li {
-	float: left;
-	margin-left: 10px; 
+#page_num div {
 	text-align: center;
+	list-style-type: none;
 }
 .FGboldRED {
 	font-weight: bold;
