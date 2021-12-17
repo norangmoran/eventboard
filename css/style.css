@@ -276,11 +276,16 @@ h2{
 	margin-top:30px;
 	display: flex;
 	justify-content: space-between;
-	width: 250px;
+	align-items: center;
+	width: 350px;
 }
-#page_num div {
+#page_F, #page_E {
 	text-align: center;
-	list-style-type: none;
+}
+#page_C {
+	width: 150px;
+	display: flex;
+	justify-content: space-between;
 }
 .FGboldRED {
 	font-weight: bold;
