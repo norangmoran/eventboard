@@ -12,6 +12,8 @@ $fill = $_POST['fill'];
 $lock = $_POST['postlock'];
 
 if($username && $userpw && $title && $content) {
+    $resetno = SQLsyn("alter table board auto_increment = 1");
+    
     $sql = SQLsyn("insert into board(`writer`,`pw`,`title`,`content`,`time`,`cnt`,`fill`,`lock`) 
         values('".$username."','".$userpw."','".$title."','".$content."','".$time."','".$cnt."','".$fill."','".$lock."');");
     echo "<script> alert('게시물이 등록되었습니다.');
