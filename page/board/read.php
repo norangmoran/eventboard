@@ -53,8 +53,8 @@
             <!--목록, 수정, 삭제-->
             <div id="bo_ser">
                 <ul>
-                    <a href="/eventboard/page/board/modify_lock.php?no=<?php echo $board['no']; ?>"><button>수정</button></a>
-                    <a href="/eventboard/page/board/delete_lock.php?no=<?php echo $board['no']; ?>"><button>삭제</button></a>
+                    <a href="/eventboard/page/board/locker.php?no=<?php echo $board['no']; ?>&act=mod"><button>수정</button></a>
+                    <a href="/eventboard/page/board/locker.php?no=<?php echo $board['no']; ?>&act=del"><button>삭제</button></a>
                 </ul>
             </div>
         </div>

@@ -13,9 +13,9 @@
             <meta http-equiv="refresh" content="0 url=/eventboard/index.php">
         <?php } else { ?>
             <script type="text/javascript">alert("비밀번호가 틀립니다.");</script>
-            <script type="text/javascript">location.replace("delete_lock.php?no=<?php echo $board["no"]; ?>");</script>
+            <script type="text/javascript">history.back();</script>
         <?php }
     } else { ?>
         <script type="text/javascript">alert('부정접속입니다.');</script>
-        <script type="text/javascript">location.replace("delete_lock.php?no=<?php echo $board["no"]; ?>");</script>
+        <script type="text/javascript">location.replace("locker.php?no=<?php echo $board["no"]; ?>&act=del");</script>
     <?php } ?>
