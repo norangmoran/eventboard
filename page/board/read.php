@@ -5,6 +5,10 @@
     <meta charset="UTF-8">
     <title>모란희 웹 포트폴리오</title>
     <link rel="stylesheet" type="text/css" href="/eventboard/css/style.css" />
+    <link rel="stylesheet" type="text/css" href="/eventboard/css/jquery-ui.css" />
+    <script type="text/javascript" src="/eventboard/js/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript" src="/eventboard/js/jquery-ui.js"></script>
+    <script type="text/javascript" src="/evnetboard/js/common.js"></script>
 </head>
 <body>
     <?php
@@ -56,6 +60,41 @@
                     <a href="/eventboard/page/board/locker.php?no=<?php echo $board['no']; ?>&act=mod"><button>수정</button></a>
                     <a href="/eventboard/page/board/locker.php?no=<?php echo $board['no']; ?>&act=del"><button>삭제</button></a>
                 </ul>
+            </div>
+        </div>
+        <div class="reply_view"> <!--댓글 불러오기-->
+            <h3>댓글목록</h3>
+            <?php
+            $sql3=SQLsyn("select * from reply where con_num='".$num."' order by no desc");
+            while($reply = $sql3 -> fetch_array()) { ?>
+                <div class = "dap_lo">
+                    <div><b><?php echo $reply['name']; ?></b></div>
+                    <div class="dap_to comt_edit"><?php echo nl2br("$reply[content]"); ?></div>
+                    <div class="rep_me dap_to"><?php echo $reply['date']; ?></div>
+                    <div class="rep_me rep_menu">
+                        <a class="dat_edit_bt" href="#">수정</a>
+                        <a class="dat_delete_bt" href="#">삭제</a>
+                    </div>
+                    <div class="dat_edit"> <!--댓글 수정폼-->
+                        <form method="post" action="rep_modify_ok.php">
+                            <input type="hidden" name="rno" value="<?php echo $reply['no']; ?>" />
+                            <input type="hidden" name="b_no" value="<?php echo $num; ?>">
+                            <input type="password" name="pw" class="dap_sm" placeholder="비밀번호" />
+                            <textarea name="content" class="dap_edit_t"><?php echo $reply['content']; ?></textarea>
+                            <input type="submit" value="수정하기" class="re_mo_bt">
+                        </form>
+                    </div>
+                    <div class="dat_delete">
+                        <form action="reply_delete.php" method="post">
+                            <input type="hidden" name="rno" value="<?php echo $reply['no']; ?>" />
+                            <input type="hidden" name="b_no" value="<?php echo $num; ?>">
+                            <p>비밀번호<input type="password" name="pw" />
+                            <input type="supmit" value="확인"></p>
+                        </form>
+                    </div>
+                </div>
+            <?php } ?>
+            <div class="dap_ins">
             </div>
         </div>
     </div>
