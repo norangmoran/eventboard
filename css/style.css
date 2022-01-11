@@ -291,3 +291,67 @@ h2{
 	font-weight: bold;
 	color:red;
 }
+
+/* 댓글 */
+.reply_view {
+	width:800px;
+	margin-top:20px; 
+	word-break:break-all;
+	background-color: #ffe5bd;
+}
+.dap_lo {
+	width:800px;
+	font-size: 14px;
+	padding:10px 0 15px 0;
+	border-bottom: solid 1px gray;
+}
+.dap_to {
+	margin-top:5px;
+}
+.rep_me {
+	font-size:12px;
+}
+.rep_me ul li {
+	float:left;
+	width: 30px;
+}
+.dat_delete {
+	display: none;
+}	
+.dat_edit {
+	display:none;
+}
+.dap_sm {
+	position: absolute;
+	top: 10px;
+}
+.dap_edit_t{
+	width:500px;
+	height:70px;
+	position: absolute;
+	top: 40px;
+}
+.re_mo_bt {
+	position: absolute;
+	top:40px;
+	right: 5px;
+	width: 90px;
+	height: 72px;
+}
+#re_content {
+	width:700px;
+	height: 56px; 
+}
+.dap_ins {
+	margin-top:50px;
+}
+.re_bt {
+	position: absolute;
+	width:100px;
+	height:56px;
+	font-size:16px;
+	margin-left: 10px; 
+}
+#foot_box {
+	height: 50px; 
+}
