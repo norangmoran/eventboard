@@ -94,13 +94,15 @@
                     </div>
                 </div>
             <?php } ?>
-            <div class="dap_ins"> <!--댓글입력 폼-->
+            <div class="dat_fm"> <!--댓글입력 폼-->
                 <form action="/eventboard/replyON.php?no=<?php echo $num; ?>" method="post">
-                    <input type="text" name="dat_user" id="dat_user" class="dat_usre" size="15" placeholder="아이디">
-                    <input type="password" name="dat_pw" id="dat_pw" class="dat_pw" size="15" placeholder="비밀번호">
-                    <div style="margin-top:10px;" >
+                    <div class="dat_fm_inf">
+                        <input type="text" name="dat_user" id="dat_user" class="dat_usre" size="15" placeholder="아이디">
+                        <input type="password" name="dat_pw" id="dat_pw" class="dat_pw" size="15" placeholder="비밀번호" style="margin-left:7px;">
+                    </div>
+                    <div class="dat_fm_con" style="margin-top:10px; margin-right:110px;" >
                         <textarea name="content" class="reply_content" id="re_content"></textarea>
-                        <button id="rep_bt" class="re_bt">댓글</button>
+                        <button id="rep_bt" class="re_bt" style="margin-left:10px;">댓글</button>
                     </div>
                 </form>
             </div>

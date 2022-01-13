@@ -245,7 +245,6 @@ h2{
 	margin-top: 30px;
 	width: 800px;
 
-	margin-bottom: 150px;
 	background: #ffe5bd;
 	padding: 10px;
 	border-top: 3px solid #008270;
@@ -297,7 +296,13 @@ h2{
 	width:800px;
 	margin-top:20px; 
 	word-break:break-all;
+	margin-bottom: 150px;
+
 	background-color: #ffe5bd;
+	padding: 10px;
+	border-top: 3px solid #008270;
+	border-bottom: 5px solid #008270;
+	border-radius: 10px;
 }
 .dap_lo {
 	width:800px;
@@ -339,18 +344,32 @@ h2{
 	height: 72px;
 }
 #re_content {
-	width:700px;
-	height: 56px; 
+	width:600px;
+	height: 60px; 
 }
-.dap_ins {
-	margin-top:50px;
+.dat_fm {
+	margin-top:30px;
+	margin-bottom:27px;
+	display: flex;
+	justify-content: center;
+}
+.dat_fm_inf textarea{
+	height: 30px;
 }
 .re_bt {
 	position: absolute;
 	width:100px;
 	height:56px;
 	font-size:16px;
-	margin-left: 10px; 
+	margin-left: 10px;
+	margin-top: 5px;
+
+	border-radius: 10px;
+	border: none;
+	font-size: 18.5px;
+	font-weight: bold;
+	background: #008270;
+	color: #fff;
 }
 #foot_box {
 	height: 50px; 
