@@ -63,12 +63,12 @@
             </div>
         </div>
         <div class="reply_view"> <!--댓글 불러오기-->
-            <h3>댓글목록</h3>
+            <h3 style="margin-left: 20px;">댓글목록</h3>
             <?php
             $sql3=SQLsyn("select * from reply where con_num='".$num."' order by no desc");
             while($reply = $sql3 -> fetch_array()) { ?>
                 <div class = "dap_lo">
-                    <div><b><?php echo $reply['name']; ?></b></div>
+                    <div style="font-size:14px;"><b><?php echo $reply['name']; ?></b></div>
                     <div class="dap_to comt_edit"><?php echo nl2br("$reply[content]"); ?></div>
                     <div class="rep_me dap_to"><?php echo $reply['time']; ?></div>
                     <div class="rep_me rep_menu">
