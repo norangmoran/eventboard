@@ -391,3 +391,7 @@ h2{
 #foot_box {
 	height: 50px; 
 }
+.re_ct {
+	font-weight: bold;
+	color: steelblue;
+}
