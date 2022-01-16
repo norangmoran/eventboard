@@ -54,7 +54,7 @@
             <div id="bo_content">
                 <?php echo nl2br("$board[content]"); ?> <!--nl2br을 안 하면 아무리 띄워쓰기가 있어도 한 줄로만 출력됨-->
             </div>
-            <!--목록, 수정, 삭제-->
+            <!--수정, 삭제-->
             <div id="bo_ser">
                 <ul>
                     <a href="/eventboard/page/board/locker.php?no=<?php echo $board['no']; ?>&act=mod"><button>수정</button></a>

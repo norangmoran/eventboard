@@ -44,6 +44,7 @@
                 $sql2 = SQLsyn("select * from board order by no desc limit $start_num, $list");
                 
                 while($board = $sql2->fetch_array()) {
+                    $row_num -= 1;
                     $title = $board["title"];
                     if(strlen($title)>30) { //제목이 30자 이상아면 ...으로 간소화
                         $title = str_replace($board["title"],mb_substr($board["title"],0,30,"utf-8")."...",$board["title"]);}
@@ -52,15 +53,14 @@
 
                     <tbody>
                         <tr>
-                            <td width="70"><?php echo $board['no']; ?></td>
+                            <td width="70"><?php echo ($row_num+1-(($page-1)*5)); ?></td>
                             <td width="500">
                                 <?php $lockimg="<img src='/eventboard/img/lock.png' alt='비공개' width='20' height='17'>";
                                 if($board['lock'] == 1) { ?>
                                     <a href="/eventboard/page/board/locker.php?no=<?php echo $board["no"];?>"><?php echo $title,"&nbsp;&nbsp;", $lockimg; ?></a>
                                 <?php } else { ?>
                                 <a href="/eventboard/page/board/read.php?no=<?php echo $board["no"];?>"><?php echo $title;
-                                } ?> 
-                                <span class="re_ct">[<?php echo $rep_count; ?>]</span></a>
+                                } ?> <span class="re_ct">[<?php echo $rep_count; ?>]</span></a>
                             </td>
                             <td width="120"><?php echo $board['fill']; ?></td>
                             <td width="100"><?php echo $board['time']; ?></td>
