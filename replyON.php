@@ -3,6 +3,7 @@
 
   $num=$_GET['no'];
   $userpw=password_hash($_POST['dat_pw'], PASSWORD_DEFAULT);
+  // $time = date('Y-m-d H:i:s');
 
   if($num && $_POST['dat_user'] && $userpw && $_POST['content']) {
     $sql = SQLsyn("insert into reply(con_num,name,pw,content) values('".$num."','".$_POST['dat_user']."','".$userpw."','".$_POST['content']."')");

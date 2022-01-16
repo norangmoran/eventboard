@@ -8,7 +8,7 @@
     <link rel="stylesheet" type="text/css" href="/eventboard/css/jquery-ui.css" />
     <script type="text/javascript" src="/eventboard/js/jquery-3.2.1.min.js"></script>
     <script type="text/javascript" src="/eventboard/js/jquery-ui.js"></script>
-    <script type="text/javascript" src="/evnetboard/js/common.js"></script>
+    <script type="text/javascript" src="/eventboard/js/common.js"></script>
 </head>
 <body>
     <?php
