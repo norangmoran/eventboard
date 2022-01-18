@@ -76,7 +76,7 @@
                         <a class="dat_delete_bt" href="#">삭제</a>
                     </div>
                     <div class="dat_edit"> <!--댓글 수정폼-->
-                        <form method="post" action="rep_modify_ok.php">
+                        <form method="post" action="reply_modify.php">
                             <input type="hidden" name="rno" value="<?php echo $reply['no']; ?>" />
                             <input type="hidden" name="b_no" value="<?php echo $num; ?>">
                             <input type="password" name="pw" class="dap_sm" placeholder="비밀번호" />

@@ -1,4 +1,7 @@
-<?php include $_SERVER['DOCUMENT_ROOT']."/eventboard/db.php"; ?>
+<?php include $_SERVER['DOCUMENT_ROOT']."/eventboard/db.php";
+$act = 0;
+$act = $_GET['act'];
+?>
 
 <link rel="stylesheet" type="text/css" href="/eventboard/css/jquery-ui.css">
 <script type="text/javascript" src="/eventboard/js/jquery-3.2.1.min.js"></script>
@@ -7,7 +10,7 @@
   $(function() {
     $("#writepass").dialog({
       modal:true,
-      <?php if($_GET['act']=='del' || $_GET['act']=='mod') { ?>
+      <?php if($act=='del' || $act=='mod') { ?>
         title:'비밀번호를 입력하세요.',
       <?php } else { ?>
         title:'비밀글 입니다.',
@@ -19,8 +22,8 @@
 </script>
 <div id='writepass'>
   <form action="/eventboard/page/board/<?php 
-    if($_GET['act']=='mod') { ?>modify<?php } 
-    else if($_GET['act']=='del') { ?>delete<?php } 
+    if($act=='mod') { ?>modify<?php } 
+    else if($act=='del') { ?>delete<?php } 
     else { ?>read<?php } ?>.php?no=<?php echo $_GET["no"]; ?>" method="post">
     <p>비밀번호: &nbsp; <input type="password" name="pw_chk"> &nbsp; <input type="submit" value="확인"></p>
   </form>
