@@ -88,8 +88,8 @@
                         <form action="reply_delete.php" method="post">
                             <input type="hidden" name="rno" value="<?php echo $reply['no']; ?>" />
                             <input type="hidden" name="b_no" value="<?php echo $num; ?>">
-                            <p>비밀번호<input type="password" name="pw" />
-                            <input type="supmit" value="확인"></p>
+                            <p>비밀번호: &nbsp; <input type="password" name="pw" />
+                            <input type="submit" value="확인"></p>
                         </form>
                     </div>
                 </div>
