@@ -1,14 +1,14 @@
 <?php
-    include $_SERVER['DOCUMENT_ROOT']."/eventboard/db.php"; ?>
+    include $_SERVER['DOCUMENT_ROOT']."/db.php"; ?>
 <!doctype html>
 <head>
     <meta charset="UTF-8">
     <title>모란희 웹 포트폴리오</title>
-    <link rel="stylesheet" type="text/css" href="/eventboard/css/style.css" />
-    <link rel="stylesheet" type="text/css" href="/eventboard/css/jquery-ui.css" />
-    <script type="text/javascript" src="/eventboard/js/jquery-3.2.1.min.js"></script>
-    <script type="text/javascript" src="/eventboard/js/jquery-ui.js"></script>
-    <script type="text/javascript" src="/eventboard/js/common.js"></script>
+    <link rel="stylesheet" type="text/css" href="/css/style.css" />
+    <link rel="stylesheet" type="text/css" href="/css/jquery-ui.css" />
+    <script type="text/javascript" src="/js/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript" src="/js/jquery-ui.js"></script>
+    <script type="text/javascript" src="/js/common.js"></script>
 </head>
 <body>
     <?php
@@ -21,12 +21,12 @@
     ?>
 
     <div id="board_read">
-        <h1><a href="/eventboard/index.php">사건게시판</a></h1>
+        <h1><a href="/index.php">사건게시판</a></h1>
         <h4>글을 읽는 공간입니다.</h4>
         <div id="read_area">
             <div id="AR_top">
                 <h2 id="lockpage_icon">
-                    <?php $lockimg="<img src='/eventboard/img/lock.png' alt='비공개' width='30' height='30'>";
+                    <?php $lockimg="<img src='/img/lock.png' alt='비공개' width='30' height='30'>";
                     if($board['lock']==1){
                         echo $lockimg;
                         if(isset($_POST['pw_chk'])) {
@@ -57,8 +57,8 @@
             <!--수정, 삭제-->
             <div id="bo_ser">
                 <ul>
-                    <a href="/eventboard/page/board/locker.php?no=<?php echo $board['no']; ?>&act=mod"><button>수정</button></a>
-                    <a href="/eventboard/page/board/locker.php?no=<?php echo $board['no']; ?>&act=del"><button>삭제</button></a>
+                    <a href="/page/board/locker.php?no=<?php echo $board['no']; ?>&act=mod"><button>수정</button></a>
+                    <a href="/page/board/locker.php?no=<?php echo $board['no']; ?>&act=del"><button>삭제</button></a>
                 </ul>
             </div>
         </div>
@@ -95,7 +95,7 @@
                 </div>
             <?php } ?>
             <div class="dat_fm"> <!--댓글입력 폼-->
-                <form action="/eventboard/replyON.php?no=<?php echo $num; ?>" method="post">
+                <form action="/replyON.php?no=<?php echo $num; ?>" method="post">
                     <div class="dat_fm_inf">
                         <input type="text" name="dat_user" id="dat_user" class="dat_usre" size="15" placeholder="아이디">
                         <input type="password" name="dat_pw" id="dat_pw" class="dat_pw" size="15" placeholder="비밀번호" style="margin-left:7px;">

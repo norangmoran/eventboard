@@ -1,5 +1,5 @@
 <?php
-    include $_SERVER['DOCUMENT_ROOT']."/eventboard/db.php";
+    include $_SERVER['DOCUMENT_ROOT']."/db.php";
 
     $num = $_GET['no'];
     
@@ -15,8 +15,8 @@
 
 <script type="text/javascript">alert("수정되었습니다.");
     <?php if($lock == 1){ ?>
-        location.replace("/eventboard/page/board/locker.php?no=<?php echo $num; ?>");
+        location.replace("/page/board/locker.php?no=<?php echo $num; ?>");
     <?php } else { ?>
-        location.replace("/eventboard/page/board/read.php?no=<?php echo $num; ?>");
+        location.replace("/page/board/read.php?no=<?php echo $num; ?>");
     <?php } ?>
 </script>

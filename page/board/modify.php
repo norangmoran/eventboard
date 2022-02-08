@@ -1,5 +1,5 @@
 <?php
-    include $_SERVER['DOCUMENT_ROOT']."/eventboard/db.php";
+    include $_SERVER['DOCUMENT_ROOT']."/db.php";
 
     $num = $_GET['no'];
     $sql = SQLsyn("select * from board where no='".$num."';");
@@ -9,11 +9,11 @@
 <head>
     <meta charset="UTF-8">
     <title>모란희 웹 포트폴리오</title>
-    <link rel="stylesheet" href="/eventboard/css/style.css" />
+    <link rel="stylesheet" href="/css/style.css" />
 </head>
 <body>
     <div id="board_write">
-        <h1><a href="/eventboard/index.php">사건게시판</a></h1>
+        <h1><a href="/index.php">사건게시판</a></h1>
         <h4>글을 수정하는 공간입니다.</h4>
         <div id="write_area">
             <?php if(isset($_POST['pw_chk'])){
@@ -28,7 +28,7 @@
                 <script type="text/javascript">location.replace("locker.php?no=<?php echo $board["no"]; ?>&act=mod");</script>
             <?php } ?>
 
-            <form action="/eventboard/modifyON.php?no=<?php echo $num; ?>" method="post">
+            <form action="/modifyON.php?no=<?php echo $num; ?>" method="post">
                 <div id="AR_top">    
                     <div id="in_title">
                         <textarea name="title" id="utitle" rows="1" cols="55" placeholder="제목" maxlength="100" required><?php echo $board['title']; ?></textarea>

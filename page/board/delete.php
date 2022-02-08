@@ -1,5 +1,5 @@
 <?php
-    include $_SERVER['DOCUMENT_ROOT']."/eventboard/db.php";
+    include $_SERVER['DOCUMENT_ROOT']."/db.php";
 
     
 
@@ -10,7 +10,7 @@
         if(password_verify($_POST['pw_chk'],$board['pw'])) {
             $sql = SQLsyn("DELETE FROM board WHERE no = '".$_GET['no']."';"); ?>
             <script type="text/javascript">alert("삭제되었습니다.");</script>
-            <meta http-equiv="refresh" content="0 url=/eventboard/index.php">
+            <meta http-equiv="refresh" content="0 url=/index.php">
         <?php } else { ?>
             <script type="text/javascript">alert("비밀번호가 틀립니다.");</script>
             <script type="text/javascript">history.back();</script>

@@ -2,14 +2,14 @@
 <head>
 <meta charset="UTF-8">
 <title>글쓰기</title>
-<link rel="stylesheet" type="text/css" href="/eventboard/css/style.css?ver=1"/>
+<link rel="stylesheet" type="text/css" href="/css/style.css?ver=1"/>
 </head>
 <body>
     <div id="board_write">
-        <a href="/eventboard/index.php"><h1>사건게시판</h1></a>
+        <a href="/index.php"><h1>사건게시판</h1></a>
         <h4>글을 작성하는 공간입니다.</h4>
             <div id="write_area">
-                <form action="/eventboard/writeON.php" method="post">
+                <form action="/writeON.php" method="post">
                     <div id="AR_top">
                         <div id="in_title">
                             <textarea name="title" id="utitle" rows="1" cols="55" placeholder="제목" maxlength="100" required></textarea>

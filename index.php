@@ -1,15 +1,15 @@
-<?php include $_SERVER['DOCUMENT_ROOT']."/eventboard/db.php"; ?> 
+<?php include $_SERVER['DOCUMENT_ROOT']."/db.php"; ?> 
     <!--DOCUMENT-ROOT는 현재 실행되고있는 index.php 위치를 말하며
-    여기를 기준으로 /eventboard/db.php 를 서버함수로써 불러옴-->
+    여기를 기준으로 /db.php 를 서버함수로써 불러옴-->
 <!DOCTYPE html>
     <head>
         <meta charset="UTF-8">
         <title>모란희 웹 포트폴리오</title>
-        <link rel="stylesheet" type="text/css" href="/eventboard/css/style.css"/>
+        <link rel="stylesheet" type="text/css" href="/css/style.css"/>
     </head>
     <body>
         <div id="BoardArea">
-            <a href="/eventboard/index.php"><h1>사건게시판</h1></a>
+            <a href="/index.php"><h1>사건게시판</h1></a>
             <h4>당신에겐 지금 무슨 일이 생겼나요?</h4>
             <h5>더 자세한 개발 이력을 알고 싶으시다면 <a href="https://github.com/norangmoran/eventboard"target="_blank">깃허브저장소</a>를 방문해 주세요!</h5>
             <h6><a href='https://kor.pngtree.com/so/%ec%9e%a0%ea%b8%88'>잠금 이미지 출처는 .pngtree.com/입니다.</a></h6>
@@ -55,11 +55,11 @@
                         <tr>
                             <td width="70"><?php echo ($row_num+1-(($page-1)*5)); ?></td>
                             <td width="500">
-                                <?php $lockimg="<img src='/eventboard/img/lock.png' alt='비공개' width='20' height='17'>";
+                                <?php $lockimg="<img src='/img/lock.png' alt='비공개' width='20' height='17'>";
                                 if($board['lock'] == 1) { ?>
-                                    <a href="/eventboard/page/board/locker.php?no=<?php echo $board["no"];?>"><?php echo $title,"&nbsp;&nbsp;", $lockimg; ?></a>
+                                    <a href="/page/board/locker.php?no=<?php echo $board["no"];?>"><?php echo $title,"&nbsp;&nbsp;", $lockimg; ?></a>
                                 <?php } else { ?>
-                                <a href="/eventboard/page/board/read.php?no=<?php echo $board["no"];?>"><?php echo $title;
+                                <a href="/page/board/read.php?no=<?php echo $board["no"];?>"><?php echo $title;
                                 } ?> <span class="re_ct">[<?php echo $rep_count; ?>]</span></a>
                             </td>
                             <td width="120"><?php echo $board['fill']; ?></td>
@@ -110,7 +110,7 @@
                 </div>
             </div>
             <div id="writer_btn">
-                <a href="/eventboard/page/board/write.php"><button>글쓰기</button></a>
+                <a href="/page/board/write.php"><button>글쓰기</button></a>
             </div>
         </div>
         <?php include "footer.php"; ?>

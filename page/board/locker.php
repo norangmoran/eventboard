@@ -1,11 +1,11 @@
-<?php include $_SERVER['DOCUMENT_ROOT']."/eventboard/db.php";
+<?php include $_SERVER['DOCUMENT_ROOT']."/db.php";
 $act = 0;
 $act = $_GET['act'];
 ?>
 
-<link rel="stylesheet" type="text/css" href="/eventboard/css/jquery-ui.css">
-<script type="text/javascript" src="/eventboard/js/jquery-3.2.1.min.js"></script>
-<script type="text/javascript" src="/eventboard/js/jquery-ui.js"></script>
+<link rel="stylesheet" type="text/css" href="/css/jquery-ui.css">
+<script type="text/javascript" src="/js/jquery-3.2.1.min.js"></script>
+<script type="text/javascript" src="/js/jquery-ui.js"></script>
 <script type="text/javascript">
   $(function() {
     $("#writepass").dialog({
@@ -15,13 +15,13 @@ $act = $_GET['act'];
       <?php } else { ?>
         title:'비밀글 입니다.',
       <?php } ?>
-      width:400,
+      width: 400,
       close:function(event,ui) {history.back();}
     });
   });
 </script>
 <div id='writepass'>
-  <form action="/eventboard/page/board/<?php 
+  <form action="/page/board/<?php 
     if($act=='mod') { ?>modify<?php } 
     else if($act=='del') { ?>delete<?php } 
     else { ?>read<?php } ?>.php?no=<?php echo $_GET["no"]; ?>" method="post">
